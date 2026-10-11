@@ -497,6 +497,45 @@ main, section, article, aside, nav, header, footer { min-width: 0; }
 }
 .rtl .product-category, .rtl .eyebrow, .rtl .section-kicker { letter-spacing: 0; }
 
+/* Editorial information pages: calm, direct and unmistakably part of the shop. */
+.information-page { padding-bottom: 26px; }
+.information-page .page-intro { max-width: 940px; }
+.info-panel.info-editorial { max-width: none; margin: 8px 0 82px; padding: clamp(24px, 4vw, 48px); background: var(--surface-raised); border: 1px solid var(--line); box-shadow: var(--shadow-soft); }
+.info-panel.info-editorial h2 { margin: 0 0 12px; }
+.info-panel.info-editorial p { color: var(--subtle); }
+.info-panel.info-editorial p:last-child { margin-bottom: 0; }
+.info-lede { max-width: 720px; font: 600 clamp(20px, 2.5vw, 30px)/1.55 var(--app-font-serif); color: var(--moss) !important; }
+.info-callout { margin: 24px 0; padding: 20px 22px; border-inline-start: 3px solid var(--clay); border-radius: 0 16px 16px 0; background: color-mix(in srgb, var(--clay) 10%, var(--surface-raised)); color: var(--ink); }
+.info-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 24px 0; }
+.info-note { padding: 20px; border-radius: 18px; border: 1px solid var(--line); background: var(--surface); }
+.info-note h3 { margin: 0 0 8px; font: 700 19px/1.35 var(--app-font-serif); color: var(--moss); }
+.info-note p { margin: 0; }
+.info-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 24px; }
+.faq-list { margin: 20px 0 0; padding: 0; list-style: none; }
+.faq-list li { padding: 21px 0; border-bottom: 1px solid var(--line); }
+.faq-list li:first-child { border-top: 1px solid var(--line); }
+.faq-list strong { display: block; margin-bottom: 7px; color: var(--moss); font: 700 19px/1.45 var(--app-font-serif); }
+.faq-list p { margin: 0; }
+.contact-layout { display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: clamp(22px, 5vw, 64px); align-items: start; }
+.contact-aside { padding: 25px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); }
+.contact-aside h2 { margin: 0 0 12px !important; }
+.contact-form { display: grid; gap: 19px; }
+.contact-field { display: grid; gap: 7px; }
+.contact-field label { color: var(--ink); font-weight: 700; font-size: 14px; }
+.contact-field input, .contact-field textarea, .contact-field select { width: 100%; border: 1px solid var(--line); border-radius: 13px; padding: 13px 15px; background: var(--surface-raised); color: var(--ink); font: 15px/1.6 var(--app-font-sans); }
+.contact-field textarea { resize: vertical; min-height: 150px; }
+.contact-field input::placeholder, .contact-field textarea::placeholder { color: var(--subtle); opacity: .8; }
+.contact-disclosure { padding: 15px 17px; border-radius: 14px; background: var(--muted); color: var(--subtle); font-size: 13px; line-height: 1.75; }
+.contact-status { padding: 13px 16px; border-radius: 13px; background: color-mix(in srgb, var(--moss) 12%, var(--surface-raised)); color: var(--ink); font-size: 14px; line-height: 1.7; }
+.contact-status a { color: var(--moss); font-weight: 700; }
+.journal-empty { margin-top: 8px; }
+.rtl .info-lede, .rtl .faq-list strong, .rtl .info-note h3 { font-family: 'Noto Sans Arabic', var(--app-font-serif); }
+.rtl .info-callout { border-radius: 16px 0 0 16px; }
+@media (max-width: 760px) {
+  .contact-layout, .info-columns { grid-template-columns: 1fr; }
+  .info-panel.info-editorial { margin-bottom: 56px; }
+}
+
 @media (max-width: 1180px) {
   .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .category-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
