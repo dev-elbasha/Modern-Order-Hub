@@ -65,33 +65,35 @@ export function ShopPage({ categorySlug }: { categorySlug?: string }) {
             data-testid="input-shop-search"
           />
         </div>
-        <select
-          className="select"
-          aria-label={t.filter}
-          value={filter}
-          onChange={(event) => setFilter(event.target.value)}
-          data-testid="select-category"
-        >
-          <option value="all">{t.all}</option>
-          {categoryNames.map((name) => (
-            <option key={name} value={name}>
-              {rtl ? categoryLabels[name] : name}
-            </option>
-          ))}
-        </select>
-        <select
-          className="select"
-          aria-label={t.sort}
-          value={sort}
-          onChange={(event) => setSort(event.target.value)}
-          data-testid="select-sort"
-        >
-          <option value="name">{t.sortName}</option>
-          <option value="category">{t.sortCategory}</option>
-        </select>
+        <div className="shop-toolbar-controls">
+          <select
+            className="select"
+            aria-label={t.filter}
+            value={filter}
+            onChange={(event) => setFilter(event.target.value)}
+            data-testid="select-category"
+          >
+            <option value="all">{t.all}</option>
+            {categoryNames.map((name) => (
+              <option key={name} value={name}>
+                {rtl ? categoryLabels[name] : name}
+              </option>
+            ))}
+          </select>
+          <select
+            className="select"
+            aria-label={t.sort}
+            value={sort}
+            onChange={(event) => setSort(event.target.value)}
+            data-testid="select-sort"
+          >
+            <option value="name">{t.sortName}</option>
+            <option value="category">{t.sortCategory}</option>
+          </select>
+        </div>
       </div>
       <div className="filters">
-        <SlidersHorizontal size={17} />
+        <SlidersHorizontal size={17} aria-hidden="true" />
         {[
           ["all", t.all] as [string, string],
           ...categoryNames.map(
@@ -101,6 +103,8 @@ export function ShopPage({ categorySlug }: { categorySlug?: string }) {
         ].map(([key, label]) => (
           <button
             key={key}
+            type="button"
+            aria-pressed={filter === key}
             onClick={() => setFilter(key)}
             className={`filter-chip ${filter === key ? "active" : ""}`}
             data-testid={`filter-${key}`}

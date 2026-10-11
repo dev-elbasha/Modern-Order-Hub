@@ -755,3 +755,67 @@ textarea.storefront-field,
 @media (prefers-reduced-motion: reduce) {
   .product-card, .category-tile::before { transition: none; }
 }
+
+/* Keep catalog search and selectors grouped, with a compact chip rhythm below. */
+.shop-toolbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(16px, 2vw, 24px);
+  margin: 18px 0 14px;
+}
+.shop-toolbar .search-field {
+  width: min(100%, 520px);
+  max-width: 520px;
+  min-width: 0;
+}
+.shop-toolbar-controls {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.shop-toolbar-controls .select {
+  width: clamp(152px, 14vw, 176px);
+  min-width: 0;
+}
+.filters {
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.filters > svg {
+  flex: 0 0 auto;
+  margin-inline-end: 2px;
+}
+.filter-chip {
+  border-radius: 999px;
+}
+
+@media (max-width: 720px) {
+  .shop-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin-block: 14px;
+  }
+  .shop-toolbar .search-field {
+    width: 100%;
+    max-width: none;
+  }
+  .shop-toolbar-controls {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .shop-toolbar-controls .select {
+    width: 100%;
+  }
+  .filters {
+    column-gap: 8px;
+    row-gap: 9px;
+  }
+}

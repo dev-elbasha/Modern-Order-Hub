@@ -1,0 +1,1 @@
+- [Canvas preview domain lookup](canvas-preview-domain-lookup.md) — Resolve mockup iframe domains with `shellExec` inside CodeExecution; `REPLIT_DOMAINS` is not a durable-runtime global.
