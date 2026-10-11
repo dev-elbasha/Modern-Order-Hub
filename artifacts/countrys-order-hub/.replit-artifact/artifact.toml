@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Country’s Order Hub"
+description = "A customer-facing storefront for Country’s Egypt, with product catalog browsing, product details, cart and checkout flows, brand stories, and bilingual market content."
+version = "1.0.0"
+id = "artifacts/countrys-order-hub"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19272
+
+[services.development]
+run = "pnpm --filter @workspace/countrys-order-hub run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/countrys-order-hub", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/countrys-order-hub/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19272"
+BASE_PATH = "/"
